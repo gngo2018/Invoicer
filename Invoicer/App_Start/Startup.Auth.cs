@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Invoicer.Models;
+using Invoicer.Data;
 
 namespace Invoicer
 {

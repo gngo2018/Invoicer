@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoicer", "Invoicer\Invoicer.csproj", "{19FEB5B8-5A7C-446E-A9BA-7F304DCC99C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoicer.WebMVC", "Invoicer\Invoicer.WebMVC.csproj", "{19FEB5B8-5A7C-446E-A9BA-7F304DCC99C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoicer.Data", "Invoicer.Data\Invoicer.Data.csproj", "{199DFAC3-18C7-46CB-AC01-91F679613EC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoicer.Models", "Invoicer.Models\Invoicer.Models.csproj", "{D40AEC3D-A0FA-4C92-9E46-49FE60BB5E29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoicer.Service", "Invoicer.Service\Invoicer.Service.csproj", "{8A483736-4B5E-4639-ACCB-52A0921E35AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoicer.Contracts", "Invoicer.Contracts\Invoicer.Contracts.csproj", "{A59DCA31-5EF9-49F3-B509-7B8DF1D8BE76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoicer.Tests", "Invoicer.Tests\Invoicer.Tests.csproj", "{C2363400-89EA-4905-97F0-40A460947796}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,26 @@ Global
 		{19FEB5B8-5A7C-446E-A9BA-7F304DCC99C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19FEB5B8-5A7C-446E-A9BA-7F304DCC99C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19FEB5B8-5A7C-446E-A9BA-7F304DCC99C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{199DFAC3-18C7-46CB-AC01-91F679613EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199DFAC3-18C7-46CB-AC01-91F679613EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{199DFAC3-18C7-46CB-AC01-91F679613EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199DFAC3-18C7-46CB-AC01-91F679613EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D40AEC3D-A0FA-4C92-9E46-49FE60BB5E29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D40AEC3D-A0FA-4C92-9E46-49FE60BB5E29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D40AEC3D-A0FA-4C92-9E46-49FE60BB5E29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D40AEC3D-A0FA-4C92-9E46-49FE60BB5E29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A483736-4B5E-4639-ACCB-52A0921E35AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A483736-4B5E-4639-ACCB-52A0921E35AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A483736-4B5E-4639-ACCB-52A0921E35AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A483736-4B5E-4639-ACCB-52A0921E35AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A59DCA31-5EF9-49F3-B509-7B8DF1D8BE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A59DCA31-5EF9-49F3-B509-7B8DF1D8BE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A59DCA31-5EF9-49F3-B509-7B8DF1D8BE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A59DCA31-5EF9-49F3-B509-7B8DF1D8BE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2363400-89EA-4905-97F0-40A460947796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2363400-89EA-4905-97F0-40A460947796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2363400-89EA-4905-97F0-40A460947796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2363400-89EA-4905-97F0-40A460947796}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
