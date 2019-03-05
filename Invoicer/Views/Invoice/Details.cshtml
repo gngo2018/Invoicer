@@ -1,0 +1,74 @@
+﻿@model Invoicer.Models.Invoice.InvoiceDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Invoice Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Invoice Id:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Company Name:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Company Address:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Bill To:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Bill To Address:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Created:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Modified:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InvoiceId}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

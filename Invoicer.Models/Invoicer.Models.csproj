@@ -76,8 +76,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InvoiceCreate.cs" />
-    <Compile Include="InvoiceListItem.cs" />
+    <Compile Include="Invoice\InvoiceCreate.cs" />
+    <Compile Include="Invoice\InvoiceDetail.cs" />
+    <Compile Include="Invoice\InvoiceListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

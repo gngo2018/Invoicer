@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Invoicer.Models;
+using Invoicer.Models.Invoice;
 using Invoicer.Service;
 using Microsoft.AspNet.Identity;
 using System;
@@ -14,14 +15,10 @@ namespace Invoicer.Controllers
     public class InvoiceController : Controller
     {
         private readonly IMapper _mapper;
-        private readonly InvoiceService _service;
-        private readonly Guid _userId;
-
         // GET: All Invoice
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var svc = new InvoiceService(userId, _mapper);
+            var svc = CreateInvoiceService();
             var model = svc.GetInvoices();
 
             return View(model);
@@ -43,13 +40,33 @@ namespace Invoicer.Controllers
                 return View(model);
             }
 
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var svc = new InvoiceService(userId, _mapper);
+            var svc = CreateInvoiceService();
 
-            svc.CreateInvoice(model);
+            if (svc.CreateInvoice(model))
+            {
+                TempData["SaveResult"] = "Your invoice was created!";
+                return RedirectToAction("Index");
+            }
 
-            return RedirectToAction("Index");
+            ModelState.AddModelError("", "Invoice was unable to be created");
+
+            return View(model);
         }
 
+        //GET Invoice by ID
+        public ActionResult Details (int id)
+        {
+            var svc = CreateInvoiceService();
+            var model = svc.GetInvoiceById(id);
+
+            return View(model);
+        }
+
+        private InvoiceService CreateInvoiceService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var svc = new InvoiceService(userId, _mapper);
+            return svc;
+        }
     }
 }

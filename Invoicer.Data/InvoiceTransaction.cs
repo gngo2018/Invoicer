@@ -12,5 +12,7 @@ namespace Invoicer.Data
         public int InvoiceId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
+        public decimal ProductTotal { get; set; }
+        public decimal GrandTotal { get; set; }
     }
 }

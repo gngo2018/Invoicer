@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Invoicer.Data;
 using Invoicer.Models;
+using Invoicer.Models.Invoice;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -54,6 +55,24 @@ namespace Invoicer.Service
                     });
 
                 return query.ToArray();
+            }
+        }
+
+        public InvoiceDetail GetInvoiceById(int invoiceId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Invoices.Single(e => e.InvoiceId == invoiceId && e.OwnerId == _userId);
+                return new InvoiceDetail
+                {
+                    InvoiceId = entity.InvoiceId,
+                    CompanyName = entity.CompanyName,
+                    CompanyAddress = entity.CompanyAddress,
+                    BillName = entity.BillName,
+                    BillAddress = entity.BillAddress,
+                    CreatedUtc = entity.CreatedUtc,
+                    ModifiedUtc = entity.ModifiedUtc
+                };
             }
         }
     }

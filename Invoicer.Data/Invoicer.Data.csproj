@@ -91,6 +91,10 @@
     <Compile Include="Migrations\201903042139527_UpdateTransaction.Designer.cs">
       <DependentUpon>201903042139527_UpdateTransaction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903051941133_TransactionTotals.cs" />
+    <Compile Include="Migrations\201903051941133_TransactionTotals.Designer.cs">
+      <DependentUpon>201903051941133_TransactionTotals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903042139527_UpdateTransaction.resx">
       <DependentUpon>201903042139527_UpdateTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903051941133_TransactionTotals.resx">
+      <DependentUpon>201903051941133_TransactionTotals.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
