@@ -12,6 +12,6 @@ namespace Invoicer.Models.InvoiceTransaction
         public int InvoiceTransactionId { get; set; }
         public int InvoiceId { get; set; }
         public int ProductId { get; set; }
-        public int Quantity { get; set; }
+        public decimal GrandTotal { get; set; }
     }
 }

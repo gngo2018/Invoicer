@@ -9,6 +9,7 @@ namespace Invoicer.Data
     public class InvoiceTransaction
     {
         public int InvoiceTransactionId { get; set; }
+        public Guid OwnerId { get; set; }
         public int InvoiceId { get; set; }
         public int ProductId { get; set; }
         public decimal GrandTotal { get; set; }

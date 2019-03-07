@@ -79,12 +79,29 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Invoice.cs" />
     <Compile Include="InvoiceTransaction.cs" />
+    <Compile Include="Migrations\201903071741539_InitialCreate.cs" />
+    <Compile Include="Migrations\201903071741539_InitialCreate.Designer.cs">
+      <DependentUpon>201903071741539_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903071845367_ITOwnerId.cs" />
+    <Compile Include="Migrations\201903071845367_ITOwnerId.Designer.cs">
+      <DependentUpon>201903071845367_ITOwnerId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201903071741539_InitialCreate.resx">
+      <DependentUpon>201903071741539_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903071845367_ITOwnerId.resx">
+      <DependentUpon>201903071845367_ITOwnerId.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

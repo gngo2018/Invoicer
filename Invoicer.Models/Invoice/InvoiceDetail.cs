@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Invoicer.Models.Product;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace Invoicer.Models.Invoice
         public string CompanyAddress { get; set; }
         public string BillName { get; set; }
         public string BillAddress { get; set; }
+        public decimal GrandTotal { get; set; }
+        public List<ProductListItem> ProductList { get; set; }
         [Display(Name ="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]

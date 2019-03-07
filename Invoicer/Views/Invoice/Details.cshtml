@@ -1,17 +1,11 @@
 ﻿@model Invoicer.Models.Invoice.InvoiceDetail
 
-@{
-    ViewBag.Title = "Details";
-}
-
-<h2>Details</h2>
-
 <div>
     <h4>Invoice Detail</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayName("Invoice Id:")
+            @Html.DisplayNameFor(model => model.InvoiceId)
         </dt>
 
         <dd>
@@ -19,7 +13,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Company Name:")
+            @Html.DisplayNameFor(model => model.CompanyName)
         </dt>
 
         <dd>
@@ -27,7 +21,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Company Address:")
+            @Html.DisplayNameFor(model => model.CompanyAddress)
         </dt>
 
         <dd>
@@ -35,7 +29,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Bill To:")
+            @Html.DisplayNameFor(model => model.BillName)
         </dt>
 
         <dd>
@@ -43,15 +37,29 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Bill To Address:")
+            @Html.DisplayNameFor(model => model.BillAddress)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.BillAddress)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductList)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductList)
+        </dd>
 
         <dt>
-            @Html.DisplayName("Created:")
+            @Html.DisplayNameFor(model => model.GrandTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GrandTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
         </dt>
 
         <dd>
@@ -59,7 +67,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Modified:")
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
         </dt>
 
         <dd>
@@ -69,6 +77,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.InvoiceId}) |
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

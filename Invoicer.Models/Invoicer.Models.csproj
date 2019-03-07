@@ -79,6 +79,7 @@
     <Compile Include="InvoiceTransaction\InvoiceTransactionCreate.cs" />
     <Compile Include="InvoiceTransaction\InvoiceTransactionDetail.cs" />
     <Compile Include="InvoiceTransaction\InvoiceTransactionEdit.cs" />
+    <Compile Include="InvoiceTransaction\InvoiceTransactionListItem.cs" />
     <Compile Include="Invoice\InvoiceCreate.cs" />
     <Compile Include="Invoice\InvoiceDetail.cs" />
     <Compile Include="Invoice\InvoiceEdit.cs" />

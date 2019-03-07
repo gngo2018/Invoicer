@@ -56,8 +56,8 @@ namespace Invoicer.Controllers
         //GET Invoice by ID
         public ActionResult Details (int id)
         {
-            var svc = CreateInvoiceService();
-            var model = svc.GetInvoiceById(id);
+            var svc = CreateTransactionService();
+            var model = svc.GetTransactionById(id);
 
             return View(model);
         }
@@ -133,6 +133,13 @@ namespace Invoicer.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var svc = new InvoiceService(userId, _mapper);
+            return svc;
+        }
+
+        private InvoiceTransactionService CreateTransactionService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var svc = new InvoiceTransactionService(userId);
             return svc;
         }
     }
