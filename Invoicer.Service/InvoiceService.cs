@@ -14,12 +14,10 @@ namespace Invoicer.Service
     public class InvoiceService
     {
         private readonly Guid _userId;
-        private readonly IMapper _mapper;
 
-        public InvoiceService( Guid userId, IMapper mapper)
+        public InvoiceService( Guid userId)
         {
             _userId = userId;
-            _mapper = mapper;
         }
 
         public bool CreateInvoice(InvoiceCreate model)

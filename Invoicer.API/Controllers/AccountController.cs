@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using Invoicer.API.Models;
 using Invoicer.API.Providers;
 using Invoicer.API.Results;
+using Invoicer.Data;
 
 namespace Invoicer.API.Controllers
 {

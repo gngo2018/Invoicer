@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Invoicer.API.Providers;
 using Invoicer.API.Models;
+using Invoicer.Data;
 
 namespace Invoicer.API
 {

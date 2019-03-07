@@ -14,7 +14,6 @@ namespace Invoicer.Controllers
     //[Authorize]
     public class InvoiceController : Controller
     {
-        private readonly IMapper _mapper;
         // GET: All Invoice
         public ActionResult Index()
         {
@@ -132,7 +131,7 @@ namespace Invoicer.Controllers
         private InvoiceService CreateInvoiceService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var svc = new InvoiceService(userId, _mapper);
+            var svc = new InvoiceService(userId);
             return svc;
         }
 
