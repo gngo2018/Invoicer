@@ -55,5 +55,49 @@ namespace Invoicer.Service
                 return query.ToArray();
             }
         }
+
+        public ProductDetail GetProductById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Products.Single(e => e.ProductId == id && e.OwnerId == _userId);
+                return new ProductDetail
+                {
+                    ProductId = entity.ProductId,
+                    ProductName = entity.ProductName,
+                    ProductPrice = entity.ProductPrice,
+                    Quantity = entity.Quantity,
+                    TotalPrice = entity.TotalPrice
+                };
+            }
+        }
+
+        public bool UpdateInvoice(ProductEdit model)
+        {
+            var totalPrice = model.ProductPrice * model.Quantity;
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Products.Single(e => e.ProductId == model.ProductId && e.OwnerId == _userId);
+
+                entity.ProductName = model.ProductName;
+                entity.ProductPrice = model.ProductPrice;
+                entity.Quantity = model.Quantity;
+                entity.TotalPrice = totalPrice;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteProduct(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Products.Single(e => e.ProductId == id && e.OwnerId == _userId);
+                ctx.Products.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
