@@ -89,7 +89,7 @@ namespace Invoicer.Controllers
 
             var svc = CreateProductService();
 
-            if (svc.UpdateInvoice(model))
+            if (svc.UpdateProduct(model))
             {
                 TempData["SaveResult"] = "Your note was updated.";
                 return RedirectToAction("Index");

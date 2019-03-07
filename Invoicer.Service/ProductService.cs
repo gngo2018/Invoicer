@@ -72,7 +72,7 @@ namespace Invoicer.Service
             }
         }
 
-        public bool UpdateInvoice(ProductEdit model)
+        public bool UpdateProduct(ProductEdit model)
         {
             var totalPrice = model.ProductPrice * model.Quantity;
 
