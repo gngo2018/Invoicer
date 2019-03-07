@@ -91,5 +91,16 @@ namespace Invoicer.Service
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteInvoice(int invoiceId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Invoices.Single(e => e.InvoiceId == invoiceId && e.OwnerId == _userId);
+                ctx.Invoices.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

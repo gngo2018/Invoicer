@@ -104,6 +104,31 @@ namespace Invoicer.Controllers
             return View(model);
         }
 
+        //GET Invoice Delete
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateInvoiceService();
+            var model = svc.GetInvoiceById(id);
+
+            return View(model);
+        }
+
+        //POST Invoice Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var svc = CreateInvoiceService();
+
+            svc.DeleteInvoice(id);
+
+            TempData["SaveResult"] = "Your note was deleted";
+
+            return RedirectToAction("Index");
+        }
+
         private InvoiceService CreateInvoiceService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Invoicer.Data
+namespace Invoicer.Models.InvoiceTransaction
 {
-    public class InvoiceTransaction
+    public class InvoiceTransactionEdit
     {
         public int InvoiceTransactionId { get; set; }
         public int InvoiceId { get; set; }
         public int ProductId { get; set; }
-        public decimal GrandTotal { get; set; }
+        public int Quantity { get; set; }
+
     }
 }

@@ -76,10 +76,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InvoiceTransaction\InvoiceTransactionCreate.cs" />
+    <Compile Include="InvoiceTransaction\InvoiceTransactionDetail.cs" />
+    <Compile Include="InvoiceTransaction\InvoiceTransactionEdit.cs" />
     <Compile Include="Invoice\InvoiceCreate.cs" />
     <Compile Include="Invoice\InvoiceDetail.cs" />
     <Compile Include="Invoice\InvoiceEdit.cs" />
     <Compile Include="Invoice\InvoiceListItem.cs" />
+    <Compile Include="Product\ProductCreate.cs" />
+    <Compile Include="Product\ProductDetail.cs" />
+    <Compile Include="Product\ProductEdit.cs" />
+    <Compile Include="Product\ProductListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -92,5 +99,6 @@
       <Name>Invoicer.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

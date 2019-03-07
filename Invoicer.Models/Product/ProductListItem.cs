@@ -1,25 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Invoicer.Data
+namespace Invoicer.Models.Product
 {
-    public class Product
+    public class ProductListItem
     {
-        [Key]
         public int ProductId { get; set; }
-        [Required]
-        public Guid OwnerId { get; set; }
-        [Required]
-        public string ProductName { get; set; }
-        [Required]
-        public decimal ProductPrice { get; set; }
-        [Required]
         public int Quantity { get; set; }
-        [Required]
+        public string ProductName { get; set; }
+        public decimal ProductPrice { get; set; }
         public decimal TotalPrice { get; set; }
     }
 }
