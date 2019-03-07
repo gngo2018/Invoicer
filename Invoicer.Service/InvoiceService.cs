@@ -75,5 +75,21 @@ namespace Invoicer.Service
                 };
             }
         }
+
+        public bool UpdateInvoice(InvoiceEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Invoices.Single(e => e.InvoiceId == model.InvoiceId && e.OwnerId == _userId);
+
+                entity.CompanyName = model.CompanyName;
+                entity.CompanyAddress = model.CompanyAddress;
+                entity.BillName = model.BillName;
+                entity.BillAddress = model.BillAddress;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

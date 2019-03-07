@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="Invoice\InvoiceCreate.cs" />
     <Compile Include="Invoice\InvoiceDetail.cs" />
+    <Compile Include="Invoice\InvoiceEdit.cs" />
     <Compile Include="Invoice\InvoiceListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

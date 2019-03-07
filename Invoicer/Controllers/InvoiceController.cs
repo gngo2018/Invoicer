@@ -62,6 +62,48 @@ namespace Invoicer.Controllers
             return View(model);
         }
 
+        //GET Invoice Edit
+        public ActionResult Edit (int id)
+        {
+            var svc = CreateInvoiceService();
+            var detail = svc.GetInvoiceById(id);
+            var model = new InvoiceEdit
+            {
+                InvoiceId = detail.InvoiceId,
+                CompanyName = detail.CompanyName,
+                CompanyAddress = detail.CompanyAddress,
+                BillName = detail.BillName,
+                BillAddress = detail.BillAddress
+            };
+
+            return View(model);
+        }
+
+        //PUT Invoice Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, InvoiceEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if(model.InvoiceId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var svc = CreateInvoiceService();
+
+            if (svc.UpdateInvoice(model))
+            {
+                TempData["SaveResult"] = "Your note was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your invoice could not be updated.");
+            return View(model);
+        }
+
         private InvoiceService CreateInvoiceService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
