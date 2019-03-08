@@ -17,10 +17,12 @@ using Invoicer.API.Models;
 using Invoicer.API.Providers;
 using Invoicer.API.Results;
 using Invoicer.Data;
+using System.Web.Http.Cors;
 
 namespace Invoicer.API.Controllers
 {
     [Authorize]
+    [EnableCors(origins: "http://localhost:4200/", headers: "*", methods: "GET, POST, PUT, DELETE, OPTIONS")]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
