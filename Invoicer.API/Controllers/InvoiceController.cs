@@ -24,8 +24,8 @@ namespace Invoicer.API.Controllers
         //GET Invoice by Id
         public IHttpActionResult Get(int id)
         {
-            InvoiceService svc = CreateInvoiceService();
-            var invoice = svc.GetInvoiceById(id);
+            InvoiceTransactionService svc = CreateTransactionService();
+            var invoice = svc.GetTransactionById(id);
 
             return Ok(invoice);
         }
@@ -73,6 +73,14 @@ namespace Invoicer.API.Controllers
             var invoiceService = new InvoiceService(userId);
 
             return invoiceService;
+        }
+
+        private InvoiceTransactionService CreateTransactionService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var svc = new InvoiceTransactionService(userId);
+
+            return svc;
         }
     }
 }

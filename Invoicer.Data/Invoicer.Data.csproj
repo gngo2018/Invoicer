@@ -87,6 +87,10 @@
     <Compile Include="Migrations\201903071845367_ITOwnerId.Designer.cs">
       <DependentUpon>201903071845367_ITOwnerId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903081457050_DataCleanUp.cs" />
+    <Compile Include="Migrations\201903081457050_DataCleanUp.Designer.cs">
+      <DependentUpon>201903081457050_DataCleanUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903071845367_ITOwnerId.resx">
       <DependentUpon>201903071845367_ITOwnerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903081457050_DataCleanUp.resx">
+      <DependentUpon>201903081457050_DataCleanUp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

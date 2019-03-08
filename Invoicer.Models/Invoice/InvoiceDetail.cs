@@ -10,6 +10,8 @@ namespace Invoicer.Models.Invoice
 {
     public class InvoiceDetail
     {
+        //Note: Can't store a list in DB, but can showcase it
+        //Note: Grand Total should be added here as well cause getting Invoice + Product by InvoiceId
         public int InvoiceId { get; set; }
         public string CompanyName { get; set; }
         public string CompanyAddress { get; set; }

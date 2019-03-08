@@ -21,23 +21,11 @@ namespace Invoicer.Service
 
         public bool CreateTransaction(InvoiceTransactionCreate model)
         {
-            //Total Price Calculation
-            //decimal totalPrice = 0;
-            //var query = new ApplicationDbContext();
-            //var context = query.Products.ToArray();
-            
-
-            //foreach (Product product in context)
-            //{
-            //    totalPrice = totalPrice + product.TotalPrice;
-            //}
-
             var entity = new InvoiceTransaction()
             {
                 OwnerId = _userId,
                 InvoiceId = model.InvoiceId,
                 ProductId = model.ProductId,
-                //GrandTotal = totalPrice
             };
 
             using (var ctx = new ApplicationDbContext())
@@ -56,7 +44,6 @@ namespace Invoicer.Service
                     {
                         InvoiceId = e.InvoiceId,
                         ProductId = e.ProductId,
-                        GrandTotal = e.GrandTotal
                     });
 
                 return query.ToArray();
