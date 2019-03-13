@@ -8,10 +8,12 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Invoicer.API.Controllers
 {
     [Authorize]
+    [EnableCorsAttribute("*", "*", "*")]
     public class InvoiceController : ApiController
     {
         //GET All Invoices

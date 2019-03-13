@@ -11,9 +11,11 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Invoicer.API.Models;
 using Invoicer.Data;
+using System.Web.Http.Cors;
 
 namespace Invoicer.API.Providers
 {
+    [EnableCorsAttribute("*", "*", "*")]
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;
@@ -30,6 +32,9 @@ namespace Invoicer.API.Providers
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
+            //Added This for Log In CORS Problem
+            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 
             ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password);

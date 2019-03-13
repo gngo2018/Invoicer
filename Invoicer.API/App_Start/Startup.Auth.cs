@@ -11,9 +11,11 @@ using Owin;
 using Invoicer.API.Providers;
 using Invoicer.API.Models;
 using Invoicer.Data;
+using System.Web.Http.Cors;
 
 namespace Invoicer.API
 {
+    [EnableCorsAttribute("*","*","*")]
     public partial class Startup
     {
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }

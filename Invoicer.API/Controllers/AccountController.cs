@@ -23,6 +23,7 @@ namespace Invoicer.API.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
+    [EnableCorsAttribute("*","*","*")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";

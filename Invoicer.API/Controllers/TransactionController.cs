@@ -7,9 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace Invoicer.API.Controllers
 {
+    [EnableCorsAttribute("*", "*", "*")]
     public class TransactionController : ApiController
     {
         //GET All Productss

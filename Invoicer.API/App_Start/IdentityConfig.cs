@@ -5,11 +5,12 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Invoicer.API.Models;
 using Invoicer.Data;
+using System.Web.Http.Cors;
 
 namespace Invoicer.API
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
-
+    [EnableCorsAttribute("*", "*", "*")]
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
         public ApplicationUserManager(IUserStore<ApplicationUser> store)
