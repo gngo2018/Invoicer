@@ -19,7 +19,7 @@ namespace Invoicer.Models.Invoice
         public string BillAddress { get; set; }
         public decimal GrandTotal { get; set; }
         public List<ProductListItem> ProductList { get; set; }
-        [Display(Name ="Created")]
+        [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }

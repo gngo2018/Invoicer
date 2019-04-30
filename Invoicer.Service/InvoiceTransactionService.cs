@@ -49,7 +49,7 @@ namespace Invoicer.Service
                 return query.ToArray();
             }
         }
-
+        //TODO: Fix Delete Exception
         public InvoiceDetail GetTransactionById(int id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -69,6 +69,7 @@ namespace Invoicer.Service
                         Quantity = product.Quantity,
                         TotalPrice = product.TotalPrice
                     };
+
                     products.Add(newProduct);
 
                     runningTotal += product.TotalPrice;

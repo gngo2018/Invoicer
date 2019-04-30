@@ -15,7 +15,6 @@ using System.Web.Http.Cors;
 
 namespace Invoicer.API.Providers
 {
-    [EnableCorsAttribute("*", "*", "*")]
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly string _publicClientId;
@@ -33,7 +32,7 @@ namespace Invoicer.API.Providers
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
             //Added This for Log In CORS Problem
-            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+            /*context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" })*/;
 
             var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
 

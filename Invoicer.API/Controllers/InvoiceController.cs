@@ -12,7 +12,6 @@ using System.Web.Http.Cors;
 
 namespace Invoicer.API.Controllers
 {
-    [Authorize]
     [EnableCorsAttribute("*", "*", "*")]
     public class InvoiceController : ApiController
     {
